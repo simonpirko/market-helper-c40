@@ -18,4 +18,9 @@ public class User {
     private String password;
     private UserRole role;
     private UserStatus status;
+
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
 }
