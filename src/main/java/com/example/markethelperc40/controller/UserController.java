@@ -22,18 +22,16 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @PostMapping
-    public ResponseEntity<?> registration(@RequestBody User user){
-
-        Optional<User> foundUser = Optional.ofNullable(userService.findUser(user));
-        if(foundUser.isPresent()){
-            return new ResponseEntity<>("Login is busy", HttpStatus.CONFLICT);
-
-        }else{
-            user.setRole(UserRole.USER);
-            user.setStatus(UserStatus.BLOCKED);
-
-            return new ResponseEntity<>(HttpStatus.CREATED);
-        }
-    }
+//    @PostMapping
+//    public ResponseEntity<?> registration(@RequestBody User user){
+//
+//        Optional<User> foundUser = Optional.ofNullable(userService.findUser(user));
+//        if(foundUser.isPresent()){
+//            return new ResponseEntity<>("Login is busy", HttpStatus.CONFLICT);
+//        }else{
+//            user.setRole(UserRole.USER);
+//            user.setStatus(UserStatus.BLOCKED);
+//            return new ResponseEntity<>(HttpStatus.CREATED);
+//        }
+//    }
 }
